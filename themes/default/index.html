@@ -1,0 +1,63 @@
+{% include header.html %}
+{% include navbar.html %}
+
+
+<div class="container py-5">
+  {% for post in paginator.posts %}
+  <article class="post row mb-5 mx-lg-5 px-lg-5">
+    <a href="{{ post.url }}" class="col-4 col-md-3">
+      {% if post.thumbnail %}
+      <img class="mw-100" src="/images/{{ post.thumbnail }}" title="{{ post.title | xml_escape }}" alt="{{ post.title | xml_escape }}">
+      {% else %}
+      <img class="mw-100" src="/themes/default/images/default_thumbnail.png" title="{{ post.title | xml_escape }}" alt="{{ post.title  | xml_escape }}">
+      {% endif %}
+    </a>
+    <div class="col-8 col-md-9">
+      <h3>
+        <a href="{{ post.url }}" title="{{ post.title | xml_escape }}">{{ post.title | xml_escape }}</a>
+      </h3>
+      <div class="excerpt">
+        {{ post.excerpt }}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+
+  <nav class="d-flex">
+    <ul class="pagination mx-auto">
+      {% if paginator.previous_page %}
+      <li class="page-item">
+        <a class="page-link"
+          href="{{ paginator.previous_page_path}}">&laquo;</a>
+      </li>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="page-item active">
+        <span class="page-link">{{ page }}</span>
+      </li>
+      {% elsif page == 1 %}
+      <li class="page-item">
+        <a class="page-link" href="/">{{ page }}</a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link"
+          href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page
+          }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+      </li>
+      {% endif %}
+    </ul>
+
+</div>
+</nav>
+
+{% include footer.html %}

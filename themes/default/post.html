@@ -1,0 +1,15 @@
+---
+layout: none
+---
+{% include header.html %}
+{% include navbar.html %}
+<div class="container py-5">
+    <div class="row col mx-lg-5 px-lg-5">
+        <h1 itemprop="name">{{ page.title }}</h1>
+        <hr>
+        <div>
+            {{ content }}
+        </div>
+    </div>
+</div>
+{% include footer.html %}

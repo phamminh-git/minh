@@ -1,0 +1,18 @@
+site_url: "https://buivannguyen.com/githubblog"
+permalink: /:title.html
+paginate: 15
+
+layouts_dir: themes/default
+includes_dir: themes/default
+
+syntax_highlighter: rouge
+
+defaults:
+  -
+    values:
+      layout: "post"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate

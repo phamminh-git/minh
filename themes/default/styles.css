@@ -1,0 +1,9 @@
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
+a, a:active, a:hover {
+    color: #212529;
+    text-decoration: none;
+}
+p {
+    font-size: 23px;
+    line-height: 1.5em;
+}

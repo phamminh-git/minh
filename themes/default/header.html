@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% if page.title %}
+        {{ page.title }}
+        {% else %}
+        {{ site.data.settings.name }} - {{ site.data.settings.description }}
+        {% endif %}
+    </title>
+    {% if page.excerpt %}
+    <meta id="metaDescription" name="description"
+        content="{{ page.excerpt| strip_html | strip_newlines | xml_escape }}" />
+    <meta property="og:description" content="{{ page.excerpt| strip_html | strip_newlines | xml_escape }}" />
+    <meta property="og:type" content="article" />
+    {% else %}
+    <meta id="metaDescription" name="description" content="{{ site.data.settings.seo_description | xml_escape }}">
+    <meta property="og:description" content="{{ site.data.settings.seo_description | xml_escape }}" />
+    <meta property="og:type" content="website" />
+    {% endif %}
+    {% if page.title %}
+    <meta property="og:title" content="{{ page.title | xml_escape }}" />
+    {% endif %}
+    {% if page.url %}
+    <meta property="og:url" content="{{ site.data.settings.site_url }}{{ page.url }}" />
+    {% endif %}
+
+    {% if page.cover %}
+    <meta property='og:image' content='{{ site.data.settings.site_url }}/images/{{ page.cover }}' />
+    {% elsif page.thumbnail %}
+    <meta property='og:image' content='{{ site.data.settings.site_url }}/images/{{ page.thumbnail }}' />
+    <meta property="og:image:width" content="250" />
+    <meta property="og:image:height" content="250" />
+    {% else %}
+    <meta property='og:image' content='{{ site.data.settings.site_url }}/images/default_thumb.png' />
+    <meta property="og:image:width" content="250" />
+    <meta property="og:image:height" content="250" />
+    {% endif %}
+    <meta property="og:image:type" content="image/jpeg" />
+    <link rel="stylesheet" href="/themes/{{site.data.settings.theme}}/styles.css">
+</head>
+
+<body>
