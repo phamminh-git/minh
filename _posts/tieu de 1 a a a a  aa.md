@@ -2,7 +2,7 @@
 thumbnail: abc
 categories: 7
 title: tieu de 1 a a a a  aa
-excerpt: kja  lkjfdsalk ldạkfoidá lkạ fdlkạoi 309821 kj4a v
+excerpt: kja  lkjfdsalk ldạkfoidá lkạ fdlkạoi 309821 kj4a
 ---
 Vụ án bé 8 tuổi bị dì ghẻ bạo hành đến tử vong vẫn đang được công chúng vô cùng quan tâm. Bên cạnh những chứng cứ, lời khai, chi tiết liên quan đến biên bản pháp y được cơ quan điều tra và luật sư cung cấp, thông tin bên lề cũng được "truy lùng".
 
