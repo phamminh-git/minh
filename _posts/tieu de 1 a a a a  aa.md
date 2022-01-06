@@ -1,6 +1,6 @@
 ---
 thumbnail: abc
-categories: 5
+categories: 12
 title: tieu de 1
 excerpt: aaâ
 ---
